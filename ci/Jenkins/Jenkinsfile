@@ -1,7 +1,6 @@
 pipeline {
   agent any
 
-  // Ajout minimal pour installer Maven
   tools {
     maven 'Maven3'
   }
@@ -19,14 +18,13 @@ pipeline {
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
-        // build the project and create a JAR file
         sh 'cd demo-java-app && mvn clean package'
       }
     }
     stage('Static Code Analysis') {
       agent {
         docker {
-          image 'maven:3.8.7-openjdk-17'
+          image 'maven:3.9.0-openjdk-17-slim'
           args  '-v $HOME/.m2:/root/.m2 --network host'
         }
       }
