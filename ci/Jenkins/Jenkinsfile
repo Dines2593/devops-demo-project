@@ -1,5 +1,10 @@
 pipeline {
   agent any
+
+  tools {
+    maven 'Maven3'
+  }
+
   parameters {
     string(name: 'build_version', defaultValue: 'V1.0', description: 'Build version to use for Docker image')
   }
