@@ -36,6 +36,7 @@ public class DemoApplication {
     }
 
         System.out.println("🚀 Application démarrée via CI\/CD automatique !");
+        System.out.println("🚀 Application démarrée via CI/CD automatique !");
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
